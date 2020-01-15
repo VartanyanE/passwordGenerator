@@ -16,7 +16,17 @@ for (let i = 0; i < 10; i++) {
     var ranChar = specialChar[Math.floor(Math.random() * specialChar.length)];
 }
 
-var mixedArr = ranNum + ranChar;
+function mixedArr() {
+    var randomArr = ranNum + ranChar;
+    ranPassword.push(randomArr);
+    passPrint.textContent = ranPassword;
+
+}
+
+if (document.getElementById("lowercase").checked === true) {
+    console.log("Checked")
+}
+
 
 
 function copyToClip() {
@@ -31,10 +41,7 @@ function copyToClip() {
 
 
 passGen.addEventListener("click", (function () {
-    ranPassword.push(mixedArr);
-
-    passPrint.textContent = ranPassword;
-
+    mixedArr();
 }));
 
 copyClip.addEventListener("click", function () {
