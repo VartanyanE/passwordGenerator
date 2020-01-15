@@ -12,40 +12,42 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 ">
-                <div class="card text-white bg-info mb-3">
+                <div class="card text-white bg-info mb-3" style="margin-top:20px">
                     <div class="card-header">Password Generator</div>
                     <div class="card-body">
+                        <input type="checkbox" name="gender" value="female"> lowercase<br>
+                        <input type="checkbox" name="gender" value="male"> UPPERCASE<br>
+                        <input type="checkbox" name="gender" value="male"> Special Charecters !"#$%&'()*+,-./:;<=>
+                            ?@[\]^_`{|}~<br>
+                            <input type="checkbox" name="gender" value="male"> Numeric Charecters [0-9]<br>
 
-                        <form-group>
-                            <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+
+
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Generate your password here</label>
+                                <textarea class="form-control" id="passPrint" rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-success btn-sm" id="passGen"
+                                style="width:100%;">Generate
+                                Pasword</button>
+                            <button type="button" class="btn btn-warning btn-sm" id="copyClip" style="width:100%">Copy
+                                to
+                                clipboard</button>
                     </div>
-                    </form-group>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Generate your password here</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button type="button" class="btn btn-success btn-sm" style="width:100%;">Generate Pasword</button>
-                    <button type="button" class="btn btn-warning btn-sm" style="margin-left:100px width:100%;">Copy to
-                        clipboard</button>
+
                 </div>
-
+                <div class="col-md-3"></div>
             </div>
-            <div class="col-md-3"></div>
         </div>
-    </div>
     </div>
 
 </body>
+<script src="./assets/script.js"></script>
 
 </html>
