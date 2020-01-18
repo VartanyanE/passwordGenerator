@@ -73,25 +73,26 @@ passGen.addEventListener("click", function () {
     upperSpecial();
     lowerSpecial();
     allSelected();
-
-
-
+    lowerUpperSpecial();
+    lowerUpperNumeric();
+    lowerSpecialNumeric();
+    upperSpecialNumeric();
 
 });
 
 function allSelected() {
     if (lowercaseChar.checked && uppercaseChar.checked && numericChar.checked && specialChar.checked) {
-        passPrint.textContent = generateRandomPasswordAllSelected(80);
+        passPrint.textContent = generateRandomPasswordAllSelected(128);
     }
 }
 function lowerCase() {
     if (lowercaseChar.checked) {
-        passPrint.textContent = generateRandomPasswordLower(50);
+        passPrint.textContent = generateRandomPasswordLower(128);
     }
 }
 function upperCase() {
     if (uppercaseChar.checked) {
-        passPrint.textContent = generateRandomPassword(80);
+        passPrint.textContent = generateRandomPassword(128);
 
     }
 }
@@ -99,53 +100,77 @@ function upperCase() {
 
 function numericCase() {
     if (numericChar.checked) {
-        passPrint.textContent = generateRandomPasswordNumeric(20);
+        passPrint.textContent = generateRandomPasswordNumeric(128);
 
     }
 }
 function specialCase() {
     if (specialChar.checked) {
-        passPrint.textContent = generateRandomPasswordSpecial(40);
+        passPrint.textContent = generateRandomPasswordSpecial(128);
 
     }
 }
 function numericSpecial() {
     if (numericChar.checked && specialChar.checked) {
-        passPrint.textContent = generateRandomPasswordNumericSpecial(50);
+        passPrint.textContent = generateRandomPasswordNumericSpecial(128);
 
     }
 }
 
 function numericLower() {
     if (numericChar.checked && lowercaseChar.checked) {
-        passPrint.textContent = generateRandomPasswordNumericLower(60);
+        passPrint.textContent = generateRandomPasswordNumericLower(128);
 
     }
 }
 
 function numericUpper() {
     if (numericChar.checked && uppercaseChar.checked) {
-        passPrint.textContent = generateRandomPasswordNumericUpper(60);
+        passPrint.textContent = generateRandomPasswordNumericUpper(128);
 
     }
 }
 
 function upperLower() {
     if (lowercaseChar.checked && uppercaseChar.checked) {
-        passPrint.textContent = generateRandomPasswordUpperLower(60);
+        passPrint.textContent = generateRandomPasswordUpperLower(128);
 
     }
 }
 
 function upperSpecial() {
     if (specialChar.checked && uppercaseChar.checked) {
-        passPrint.textContent = generateRandomPasswordUpperSpecial(80);
+        passPrint.textContent = generateRandomPasswordUpperSpecial(128);
 
     }
 }
 function lowerSpecial() {
     if (lowercaseChar.checked && specialChar.checked) {
-        passPrint.textContent = generateRandomPasswordLowerSpecial(100)
+        passPrint.textContent = generateRandomPasswordLowerSpecial(128)
+    }
+}
+
+function lowerUpperSpecial() {
+    if (lowercaseChar.checked && specialChar.checked && uppercaseChar.checked) {
+        passPrint.textContent = generateRandomPasswordLowerUpperSpecial(128)
+    }
+}
+
+function lowerUpperNumeric() {
+    if (lowercaseChar.checked && numericChar.checked && uppercaseChar.checked) {
+        passPrint.textContent = generateRandomPasswordLowerUpperNumeric(128)
+    }
+}
+
+function lowerSpecialNumeric() {
+    if (lowercaseChar.checked && numericChar.checked && specialChar.checked) {
+        passPrint.textContent = generateRandomPasswordLowerSpecialNumeric(128)
+    }
+}
+
+function upperSpecialNumeric() {
+    if (uppercaseChar.checked && numericChar.checked && specialChar.checked) {
+        passPrint.textContent = generateRandomPasswordUpperSpecialNumeric(128)
     }
 }
 
@@ -328,5 +353,59 @@ function generateRandomPasswordAllSelected(passwordLength) {
     return allSelectedPass;
 
 }
+
+function generateRandomPasswordLowerUpperSpecial(passwordLength) {
+    var lowerUpperSpecialPass = "";
+    var allPossibleLowerUpperSpecialCaseChars = "#$%&(),*+-/:;<=>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (var i = 0; i < passwordLength; i++) {
+        lowerUpperSpecialPass += allPossibleLowerUpperSpecialCaseChars.charAt(Math.floor(Math.random() * allPossibleLowerUpperSpecialCaseChars.length));
+
+    }
+
+    return lowerUpperSpecialPass;
+
+}
+
+function generateRandomPasswordLowerUpperNumeric(passwordLength) {
+    var lowerUpperNumericPass = "";
+    var allPossibleLowerUpperNumericCaseChars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (var i = 0; i < passwordLength; i++) {
+        lowerUpperNumericPass += allPossibleLowerUpperNumericCaseChars.charAt(Math.floor(Math.random() * allPossibleLowerUpperNumericCaseChars.length));
+
+    }
+
+    return lowerUpperNumericPass;
+
+}
+
+function generateRandomPasswordLowerSpecialNumeric(passwordLength) {
+    var lowerSpecialNumericPass = "";
+    var allPossibleLowerSpecialNumericCaseChars = "0123456789abcdefghijklmnopqrstuvwxyz#$%&(),*+-/:;<=>";
+
+    for (var i = 0; i < passwordLength; i++) {
+        lowerSpecialNumericPass += allPossibleLowerSpecialNumericCaseChars.charAt(Math.floor(Math.random() * allPossibleLowerSpecialNumericCaseChars.length));
+
+    }
+
+    return lowerSpecialNumericPass;
+
+}
+
+function generateRandomPasswordUpperSpecialNumeric(passwordLength) {
+    var upperSpecialNumericPass = "";
+    var allPossibleUpperSpecialNumericCaseChars = "0123456789#$%&(),*+-/:;<=>ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (var i = 0; i < passwordLength; i++) {
+        upperSpecialNumericPass += allPossibleUpperSpecialNumericCaseChars.charAt(Math.floor(Math.random() * allPossibleUpperSpecialNumericCaseChars.length));
+
+    }
+
+    return upperSpecialNumericPass;
+
+}
+
+
 
 
